@@ -42,3 +42,22 @@ function startScrollspy() {
         }
     }
 }
+
+function percentInView(div) {
+    const rect = div.getBoundingClientRect();
+
+    const dimension = { x: rect.x, y: rect.y, w: rect.width, h: rect.height };
+    const viewport = { x: 0, y: 0, w: window.innerWidth, h: window.innerHeight };
+    const divsize = dimension.w * dimension.h;
+    const overlap = intersection(dimension, viewport);
+
+    return overlap / divsize;
+}
+
+function intersection(r1, r2) {
+    const x_overlap = Math.max(0, Math.min(r1.x + r1.w, r2.x + r2.w) - Math.max(r1.x, r2.x));
+    const y_overlap = Math.max(0, Math.min(r1.y + r1.h, r2.y + r2.h) - Math.max(r1.y, r2.y));
+    const overlapArea = x_overlap * y_overlap;
+    
+    return overlapArea;
+}
