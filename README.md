@@ -11,6 +11,8 @@
 - Paste the JS code from this repository into the page. It must be inserted after the used Scrollspy (not before it).
 - Edit the selector (where your menu (nav) with all links should be) and if you have a longer last paragraph, you can also edit the value for the comment `TODO: ...`
 
+<br>
+
 ## How it works?
 - The code just analyzes how visible a paragraph is and marks the one that is visible first as active.
 - The last paragraph is then marked as active if it is at least partially visible. This is mainly because of the short last paragraphs to ever mark as active. However, the behavior can be changed.
